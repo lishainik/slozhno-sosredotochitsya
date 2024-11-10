@@ -9,43 +9,29 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  --color-accent:#FF8DCB;
-  --title-color: #FF8DCB;
-  --color-background: #FFF1F7;
+  --color-accent: #ff8dcb;
+  --title-color: #ff8dcb;
+  --color-background: #fff1f7;
   --decorated-text-color: #353430;
-  --color-deco:  #353430;
+  --color-deco: #353430;
   --background-image: url(../images/cover-image-light.png);
-  --title-shadow:  #FF0070;
+  --title-shadow: #ff0070;
   --corner-symbol-display: none;
-  --transparent-border-color: rgba(53, 52 ,48, 0.4);
+  --transparent-border-color: rgba(53, 52, 48, 0.4);
   --article-text-color: #353430;
-
-  
-  
-  
 }
-
 
 @media (prefers-color-scheme: light) {
-
   :root {
-    --color-accent:#FF8DCB;
-  --color-background: #FFF1F7;
-  --decorated-text-color: #353430;
-  --color-deco:  #353430;
-  --background-image: url(../images/cover-image-light.png);
-  --title-shadow:  #FF0070;
-  --title-color: #FF8DCB;
-  --corner-symbol-display: none;
-  --transparent-border-color: rgba(53, 52 ,48, 0.4);
-  --article-text-color: #353430;
-
-
+    --color-accent: #ff8dcb;
+    --color-background: #fff1f7;
+    --decorated-text-color: #353430;
+    --color-deco: #353430;
+    --background-image: url(../images/cover-image-light.png);
+    --title-shadow: #ff0070;
+    --title-color: #ff8dcb;
+    --corner-symbol-display: none;
+    --transparent-border-color: rgba(53, 52, 48, 0.4);
+    --article-text-color: #353430;
   }
-
-  
-  
-  
-
 }
-

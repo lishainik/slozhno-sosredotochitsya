@@ -1,21 +1,11 @@
 @import url(variables.css);
 
-
-
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-.body {
-  
- 
-}
-
-.header  {
+.header {
   display: grid;
   height: clamp(669px, 768px, 1024px);
   grid-template-rows: 1fr 1fr 1fr;
-  background-image: var(--background-image);
-  background-size: cover;
-  background-position: center;
   position: relative;
 }
 
@@ -29,8 +19,6 @@
   width: calc(100% - 20px);
 }
 
-
-
 .header__theme-menu-list {
   display: flex;
   list-style: none;
@@ -38,7 +26,7 @@
   max-width: 230px;
   align-self: end;
   padding: 0;
- justify-content: space-between;
+  justify-content: space-between;
 }
 
 .header__theme-menu-item {
@@ -50,15 +38,14 @@
 .header__theme-menu-button {
   height: 26px;
   width: 70px;
-  border:none;
+  border: none;
   background: none;
   font-family: var(--font-main);
   font-weight: var(--font-normal);
   font-size: 18px;
   line-height: 1em;
   text-transform: lowercase;
-  color:var(--color-deco);
-  
+  color: var(--color-deco);
 }
 
 .header__theme-menu-button:hover {
@@ -82,21 +69,19 @@
   font-family: var(--font-main);
   font-weight: var(--font-normal);
   font-size: 18px;
-  color:var(--color-accent);
+  color: var(--color-accent);
   display: var(--corner-symbol-display);
   align-items: center;
   gap: 10px;
   padding-right: 5%;
 }
 
- .header__symbol-lamp{
+.header__symbol-lamp {
   background-color: var(--color-accent);
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  box-shadow: 0px 0px 4px 2px #FF0070;
-
-
+  box-shadow: 0px 0px 4px 2px #ff0070;
 }
 
 .header__title {
@@ -108,7 +93,6 @@
   text-shadow: 4px 4px 0 var(--title-shadow);
   line-height: 1.5em;
   color: var(--title-color);
-
 }
 
 .header__subtext {
@@ -123,11 +107,11 @@
   margin-top: 0px;
 }
 
-.header__subtext span{
+.header__subtext span {
   display: block;
 }
 
-.header__subtext span:last-of-type{
+.header__subtext span:last-of-type {
   margin-bottom: 10px;
 }
 
@@ -158,13 +142,12 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: 
-  " title text "
-  " title text"
-  ;
+  grid-template-areas:
+    " title text "
+    " title text";
 }
 
-.why .article-block{
+.why .article-block {
   margin-left: 10px;
 }
 
@@ -182,14 +165,14 @@
 .what {
   margin: 0 auto 0;
   width: 96%;
- 
+
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 3.9fr;
   column-gap: 20px;
-  grid-template-areas: 
-  "title title title"
-  "text1 text2 text3";
+  grid-template-areas:
+    "title title title"
+    "text1 text2 text3";
 }
 
 .what article {
@@ -209,13 +192,10 @@
 
 .what p {
   margin-top: 10px;
-
 }
 
-
 .why p {
- margin-top: 0;
-
+  margin-top: 0;
 }
 
 .how {
@@ -259,12 +239,10 @@
   gap: 20px;
 }
 
-
-
 .pics__image {
   width: 100%;
-height: 100%;
-object-fit: cover;
+  height: 100%;
+  object-fit: cover;
 }
 
 .pics__image:nth-of-type(1) {
@@ -280,15 +258,12 @@ object-fit: cover;
 }
 
 .pics__image:nth-of-type(4) {
-  
   grid-area: 2 / 2 / 3 / 3;
 }
 
 .pics__image:nth-of-type(5) {
   grid-area: 3 / 2 / 4 / 4;
 }
-
-
 
 .title-decor {
   background-color: var(--color-accent);
@@ -297,7 +272,6 @@ object-fit: cover;
   font-size: 18px;
   line-height: 1.3em;
   color: var(--decorated-text-color);
-  
 }
 
 .article-title {
@@ -307,7 +281,6 @@ object-fit: cover;
   font-size: 18px;
   line-height: 1.3em;
 }
-
 
 .article-block {
   font-family: var(--font-main);
@@ -322,7 +295,6 @@ object-fit: cover;
   text-decoration: none;
   color: var(--article-text-color);
   text-shadow: 1px 1px 0 var(--color-accent);
-
 }
 
 .article__link:hover {
@@ -338,14 +310,14 @@ object-fit: cover;
   font-weight: var(--font-normal);
 }
 
-.footer{
+.footer {
   width: 100%;
   display: flex;
   position: relative;
   height: clamp(668px, 768px, 1024px);
- align-items: center;
- justify-content: center;
- margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .footer__title {
@@ -355,8 +327,6 @@ object-fit: cover;
   text-shadow: 4px 4px 0 var(--title-shadow);
   line-height: 1.5em;
   color: var(--title-color);
- 
-
 }
 
 .page {
@@ -364,9 +334,12 @@ object-fit: cover;
   max-width: 1024px;
   margin: auto;
   background-color: var(--color-background);
+  background-attachment: fixed;
+  background-image: var(--background-image);
+  background-size: 100%;
 }
 
-@media(max-width: 900px) {
+@media (max-width: 900px) {
   .what {
     display: flex;
     flex-direction: column;
@@ -375,8 +348,7 @@ object-fit: cover;
   }
 }
 
-@media(max-width: 768px) {
-  
+@media (max-width: 768px) {
   .page {
     width: 100vw;
   }
@@ -402,12 +374,12 @@ object-fit: cover;
     padding-right: 20px;
   }
 
-  
   .header__theme-menu {
     grid-template-columns: none;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "decoration"
-                          "buttons";
+    grid-template-areas:
+      "decoration"
+      "buttons";
     max-height: 100%;
     width: 95.1%;
     justify-content: end;
@@ -428,7 +400,6 @@ object-fit: cover;
   }
 
   .why {
-
     margin: 60px auto 0;
     column-gap: 25px;
     width: 95%;
@@ -447,7 +418,7 @@ object-fit: cover;
 
   .what {
     width: 95%;
-    
+
     margin-top: 20px;
   }
 
@@ -474,7 +445,7 @@ object-fit: cover;
   .how h3 {
     margin-bottom: 22px;
   }
-  
+
   .pics {
     width: 95%;
   }
@@ -489,8 +460,7 @@ object-fit: cover;
   }
 }
 
-@media(max-width: 375px) {
-
+@media (max-width: 375px) {
   .page {
     margin: 0;
   }
@@ -530,7 +500,7 @@ object-fit: cover;
     bottom: calc(100% - 36px);
     left: calc(100% - 36px);
   }
-  
+
   .header__corner_lower {
     top: calc(100% - 36px);
     right: calc(100% - 36px);
@@ -552,7 +522,7 @@ object-fit: cover;
   }
 
   .what {
-    height:1119px;
+    height: 1119px;
   }
 
   .what h2 {
@@ -566,7 +536,7 @@ object-fit: cover;
     display: flex;
     flex-direction: column;
   }
-  
+
   .how h2 {
     margin-bottom: 0;
   }
@@ -575,7 +545,7 @@ object-fit: cover;
     margin-top: 0;
   }
 
-  .pics  {
+  .pics {
     margin-top: 25px;
   }
 
@@ -593,11 +563,10 @@ object-fit: cover;
 
   .footer {
     margin-top: 38px;
-    height: 668px;;
+    height: 668px;
   }
 
   .footer__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
-
 }
