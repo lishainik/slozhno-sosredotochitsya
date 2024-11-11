@@ -10,12 +10,12 @@
 }
 
 .header__theme-menu {
+  margin-top: 15px;
   justify-self: center;
   display: grid;
   grid-template-columns: 1fr 0.6fr 1fr;
   grid-template-areas: ". buttons decoration";
   max-height: 30px;
-  margin-top: 0.3%;
   width: calc(100% - 20px);
 }
 
@@ -63,6 +63,7 @@
 }
 
 .header__symbol {
+  margin-top:5px;
   grid-area: decoration;
   justify-self: end;
   align-self: center;
@@ -124,21 +125,22 @@
   border-right: 1px solid var(--color-deco);
   border-top: 1px solid var(--color-deco);
   position: absolute;
-  bottom: calc(100% - 46px);
-  left: calc(100% - 46px);
+  top: 20px;
+  right:20px;
 }
 
 .header__corner_lower {
   border-left: 1px solid var(--color-deco);
   border-bottom: 1px solid var(--color-deco);
   position: absolute;
-  top: calc(100% - 46px);
-  right: calc(100% - 46px);
+  left: 20px;
+  bottom: 20px;
 }
 
 .why {
   margin: 60px auto 0;
   width: 96%;
+  height: fit-content;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr;
@@ -149,6 +151,7 @@
 
 .why .article-block {
   margin-left: 10px;
+  margin-bottom: 20px;
 }
 
 .why h2 {
@@ -159,7 +162,7 @@
 .why h3 {
   margin-top: 0;
   margin-bottom: 10px;
-  width: 100%;
+  width: 98.5%;
 }
 
 .what {
@@ -175,13 +178,10 @@
     "text1 text2 text3";
 }
 
-.what article {
-  height: 400px;
-}
-
 .what h2 {
   grid-area: title;
-  margin-top: 65px;
+  margin-top: 60px;
+  margin-bottom: 15px;
   width: 33%;
 }
 
@@ -211,8 +211,14 @@
   flex-direction: column;
 }
 
+.how h2 { 
+  margin-top: 35px;
+
+}
+
 .how__article-container h3 {
-  margin-top: 15px;
+  margin-top: 35px;
+  margin-bottom: 15px;
 }
 
 .how__article-container h4 {
@@ -339,19 +345,9 @@
   background-size: 100%;
 }
 
-@media (max-width: 900px) {
-  .what {
-    display: flex;
-    flex-direction: column;
-    height: min-content;
-    margin-bottom: 10px;
-  }
-}
 
 @media (max-width: 768px) {
-  .page {
-    width: 100vw;
-  }
+
 
   .header {
     width: 100%;
@@ -365,7 +361,7 @@
 
   .header__subtext {
     margin-top: 5.5%;
-    height: 34%;
+    height: fit-content;
     width: 47.5%;
     margin-right: 2.5%;
   }
@@ -374,28 +370,33 @@
     padding-right: 20px;
   }
 
+  .header__subtext span:last-of-type {
+    margin-bottom: 0;
+  }
+
   .header__theme-menu {
+    margin-top: 16px;
+    margin-right: 15px;
     grid-template-columns: none;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
       "decoration"
       "buttons";
     max-height: 100%;
-    width: 95.1%;
     justify-content: end;
   }
 
   .header__theme-menu-list {
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     width: 70px;
     align-self: center;
   }
 
   .header__symbol {
+
     align-self: flex-start;
-    margin-top: 19px;
     margin-right: 7px;
   }
 
@@ -410,15 +411,22 @@
     max-width: 236px;
   }
 
-  .why p {
-    text-align: left;
+  .why h3 {
     width: 100%;
+  }
+
+  .why .article-block {
+    text-align: left;
+    width: 98%;
     margin-bottom: 15px;
   }
 
   .what {
     width: 95%;
-
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+    margin-bottom: 10px;
     margin-top: 20px;
   }
 
@@ -438,12 +446,13 @@
 
   .how {
     width: 95%;
-    margin-top: 48px;
+    margin-top: 30px;
     gap: 20px;
   }
 
   .how h3 {
-    margin-bottom: 22px;
+    margin-top: 35px;
+    margin-bottom: 20px;
   }
 
   .pics {
@@ -471,15 +480,16 @@
   }
 
   .header__theme-menu {
+    margin-top: 1.5%;
     grid-template-rows: 1fr 3.5fr;
   }
 
   .header__theme-menu-list {
-    margin-top: 5px;
+    margin-bottom: 50px;
   }
 
   .header__symbol {
-    margin-top: 10px;
+    margin-top: 5px;
   }
 
   .header__title {
@@ -495,15 +505,14 @@
     width: 94.5%;
     margin-right: 10px;
   }
-
   .header__corner_upper {
-    bottom: calc(100% - 36px);
-    left: calc(100% - 36px);
+    top: 10px;
+    right: 10px;
   }
 
   .header__corner_lower {
-    top: calc(100% - 36px);
-    right: calc(100% - 36px);
+    bottom: 10px;
+    left: 10px;
   }
 
   .why {
@@ -519,6 +528,7 @@
 
   .why .article-block {
     margin-left: 0;
+    width: 100%;
   }
 
   .what {
@@ -526,13 +536,13 @@
   }
 
   .what h2 {
-    margin-top: 30px;
+    margin-top: 15px;
     margin-bottom: 15px;
     width: 80%;
   }
 
   .how {
-    margin-top: 65px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
   }
@@ -543,10 +553,11 @@
 
   .how h3 {
     margin-top: 0;
+    margin-bottom: 20px;
   }
 
   .pics {
-    margin-top: 25px;
+    margin-top: 30px;
   }
 
   .pics h2 {
