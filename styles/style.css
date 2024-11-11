@@ -63,7 +63,7 @@
 }
 
 .header__symbol {
-  margin-top:5px;
+  margin-top: 5px;
   grid-area: decoration;
   justify-self: end;
   align-self: center;
@@ -126,7 +126,7 @@
   border-top: 1px solid var(--color-deco);
   position: absolute;
   top: 20px;
-  right:20px;
+  right: 20px;
 }
 
 .header__corner_lower {
@@ -211,9 +211,8 @@
   flex-direction: column;
 }
 
-.how h2 { 
+.how h2 {
   margin-top: 35px;
-
 }
 
 .how__article-container h3 {
@@ -345,10 +344,7 @@
   background-size: 100%;
 }
 
-
 @media (max-width: 768px) {
-
-
   .header {
     width: 100%;
     height: max(669px, 1024px);
@@ -395,7 +391,6 @@
   }
 
   .header__symbol {
-
     align-self: flex-start;
     margin-right: 7px;
   }
