@@ -165,6 +165,7 @@
 
 .article-subtitle {
   margin-bottom: 10px;
+  font-weight: var(--font-normal);
 }
 
 .why {
@@ -287,10 +288,6 @@
 .article__link:focus-visible {
   outline: none;
   border: 1px solid;
-}
-
-.article-subtitle {
-  font-weight: var(--font-normal);
 }
 
 .footer {
