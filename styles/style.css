@@ -2,9 +2,20 @@
 
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+.page {
+  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  max-width: 1024px;
+  margin: auto;
+  background-color: var(--color-background);
+  background-attachment: fixed;
+  background-image: var(--background-image);
+  background-size: cover;
+}
+
 .header {
   display: grid;
-  height: clamp(669px, 768px, 1024px);
+  height: 100vh;
+  min-height: 668px;
   grid-template-rows: 1fr 1fr 1fr;
   position: relative;
 }
@@ -54,7 +65,7 @@
 
 .header__theme-menu-button:focus-visible {
   outline: none;
-  border-bottom: solid 1px var(--transparent-border-color);
+  border-bottom: solid 1px var(--color-deco);
 }
 
 .header__theme-menu-button_active {
@@ -77,7 +88,8 @@
   padding-right: 5%;
 }
 
-.header__symbol-lamp {
+.header__symbol::after {
+  content: "";
   background-color: var(--color-accent);
   width: 9px;
   height: 9px;
@@ -87,7 +99,7 @@
 
 .header__title {
   margin: 0;
-  padding-top: 1%;
+  padding-top: 1.4%;
   font-family: var(--font-main);
   font-weight: var(--font-bold);
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -99,7 +111,7 @@
 .header__subtext {
   margin-top: 5.1%;
   margin-right: 2%;
-  height: 27%;
+  height: 71px;
   width: 48%;
   justify-self: end;
 }
@@ -116,12 +128,12 @@
   margin-bottom: 10px;
 }
 
-.header__corner {
+.corner {
   width: 25px;
   height: 25px;
 }
 
-.header__corner_upper {
+.corner_upper {
   border-right: 1px solid var(--color-deco);
   border-top: 1px solid var(--color-deco);
   position: absolute;
@@ -129,7 +141,7 @@
   right: 20px;
 }
 
-.header__corner_lower {
+.corner_lower {
   border-left: 1px solid var(--color-deco);
   border-bottom: 1px solid var(--color-deco);
   position: absolute;
@@ -137,107 +149,73 @@
   bottom: 20px;
 }
 
-.why {
-  margin: 60px auto 0;
-  width: 96%;
-  height: fit-content;
+.content {
+  margin: 80px auto 0;
   display: grid;
+  width: 96%;
+}
+
+.content:first-of-type {
+  margin-top: 60px;
+}
+
+.article-block_title {
+  margin-bottom: 10px;
+}
+
+.article-subtitle {
+  margin-bottom: 10px;
+}
+
+.why {
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
     " title text "
     " title text";
+  column-gap: 10px;
+  row-gap: 20px;
 }
 
-.why .article-block {
-  margin-left: 10px;
-  margin-bottom: 20px;
-}
-
-.why h2 {
+.why .article-title {
   grid-area: title;
-  margin-top: 0;
-}
-
-.why h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  width: 98.5%;
 }
 
 .what {
-  margin: 0 auto 0;
-  width: 96%;
-
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 3.9fr;
-  column-gap: 20px;
+  grid-template-rows: 1fr 6.5fr;
   grid-template-areas:
     "title title title"
     "text1 text2 text3";
+  column-gap: 20px;
 }
 
-.what h2 {
+.what .article-title {
   grid-area: title;
-  margin-top: 60px;
-  margin-bottom: 15px;
   width: 33%;
 }
 
-.what h3 {
-  margin-top: 5px;
-  margin-bottom: 0;
-}
-
-.what p {
-  margin-top: 10px;
-}
-
-.why p {
-  margin-top: 0;
-}
-
 .how {
-  margin: 8px auto 0;
-  width: 96%;
-  display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 10px;
+  column-gap: 10px;
 }
 
 .how__article-container {
   display: flex;
   flex-direction: column;
+  row-gap: 10px;
 }
 
-.how h2 {
-  margin-top: 35px;
-}
-
-.how__article-container h3 {
-  margin-top: 35px;
-  margin-bottom: 15px;
-}
-
-.how__article-container h4 {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.how__article-container p {
-  height: min-content;
-  margin-top: 10px;
-  margin-bottom: 20px;
+.how .article-block_text {
+  margin-bottom: 10px;
 }
 
 .pics {
-  width: 96%;
-  margin: 60px auto 0;
+  margin-top: 70px;
 }
 
 .pics__container {
-  margin-top: 20px;
+  margin-top: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 0.85fr 1fr;
@@ -319,7 +297,8 @@
   width: 100%;
   display: flex;
   position: relative;
-  height: clamp(668px, 768px, 1024px);
+  height: 100vh;
+  min-height: 668px;
   align-items: center;
   justify-content: center;
   margin-top: 10px;
@@ -329,19 +308,9 @@
   font-family: var(--font-main);
   font-weight: var(--font-bold);
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  text-shadow: 4px 4px 0 var(--title-shadow);
+  text-shadow: 2px 2px 0 var(--title-shadow);
   line-height: 1.5em;
   color: var(--title-color);
-}
-
-.page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  max-width: 1024px;
-  margin: auto;
-  background-color: var(--color-background);
-  background-attachment: fixed;
-  background-image: var(--background-image);
-  background-size: 100%;
 }
 
 @media (max-width: 768px) {
@@ -357,7 +326,7 @@
 
   .header__subtext {
     margin-top: 5.5%;
-    height: fit-content;
+    height: 117px;
     width: 47.5%;
     margin-right: 2.5%;
   }
@@ -395,72 +364,63 @@
     margin-right: 7px;
   }
 
-  .why {
-    margin: 60px auto 0;
-    column-gap: 25px;
+  .content {
+    margin-top: 60px;
     width: 95%;
-    gap: 5px;
   }
 
-  .why h2 {
+  .content .article-block_text {
+    margin-bottom: 20px;
+  }
+
+  .content .article-title {
+    margin-bottom: 20px;
+  }
+
+  .content .article-block {
+    height: fit-content;
+  }
+
+  .why {
+    column-gap: 25px;
+    row-gap: 0;
+  }
+
+  .why .article-title {
     max-width: 236px;
-  }
-
-  .why h3 {
-    width: 100%;
   }
 
   .why .article-block {
     text-align: left;
-    width: 98%;
-    margin-bottom: 15px;
+  }
+
+  .why .article-block:last-of-type {
+    margin-bottom: 0;
   }
 
   .what {
-    width: 95%;
     display: flex;
     flex-direction: column;
-    height: min-content;
-    margin-bottom: 10px;
-    margin-top: 20px;
   }
 
-  .what h2 {
+  .what .article-title {
     width: 20%;
-    margin-top: 45px;
-    margin-bottom: 15px;
-  }
-
-  .what article {
-    height: 100%;
-  }
-
-  .what p {
-    margin-bottom: 15px;
   }
 
   .how {
-    width: 95%;
-    margin-top: 30px;
     gap: 20px;
   }
 
-  .how h3 {
-    margin-top: 35px;
-    margin-bottom: 20px;
+  .how .article-block_text {
+    margin-bottom: 10px;
   }
 
-  .pics {
-    width: 95%;
-  }
-
-  .article-block {
-    width: auto;
+  .how__article-container {
+    margin-bottom: 10px;
   }
 
   .footer {
     margin-top: 15px;
-    height: max(1024px, 668px);
   }
 }
 
@@ -475,6 +435,7 @@
   }
 
   .header__theme-menu {
+    margin-right: 8px;
     margin-top: 1.5%;
     grid-template-rows: 1fr 3.5fr;
   }
@@ -485,6 +446,7 @@
 
   .header__symbol {
     margin-top: 5px;
+    margin-right: 2px;
   }
 
   .header__title {
@@ -496,72 +458,49 @@
 
   .header__subtext {
     margin-top: 56px;
-    height: 49%;
+
     width: 94.5%;
     margin-right: 10px;
   }
-  .header__corner_upper {
+  .corner_upper {
     top: 10px;
     right: 10px;
   }
 
-  .header__corner_lower {
+  .corner_lower {
     bottom: 10px;
     left: 10px;
+  }
+
+  .content {
+    margin: 30px auto 0;
+  }
+
+  .content:first-of-type {
+    margin-top: 40px;
   }
 
   .why {
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
   }
 
-  .why h2 {
+  .why .article-title {
     max-width: 100%;
-    margin-bottom: 15px;
   }
 
-  .why .article-block {
-    margin-left: 0;
-    width: 100%;
-  }
-
-  .what {
-    height: 1119px;
-  }
-
-  .what h2 {
-    margin-top: 15px;
-    margin-bottom: 15px;
+  .what .article-title {
     width: 80%;
   }
 
   .how {
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
-  }
-
-  .how h2 {
-    margin-bottom: 0;
-  }
-
-  .how h3 {
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-
-  .pics {
-    margin-top: 30px;
-  }
-
-  .pics h2 {
-    margin-top: 0;
-    margin-bottom: 0;
+    gap: 0;
   }
 
   .pics__container {
-    margin-top: 10px;
+    margin-top: 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -569,7 +508,6 @@
 
   .footer {
     margin-top: 38px;
-    height: 668px;
   }
 
   .footer__title {
