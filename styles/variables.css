@@ -4,7 +4,7 @@
 */
 
 :root {
-  --font-main: IBM Plex Mono;
+  --font-main: IBM Plex Mono, monospace;
   --font-normal: 400;
   --font-bold: 700;
   --color-accent: #ff0070;

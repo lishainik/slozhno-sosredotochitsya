@@ -1,4 +1,4 @@
-@import url(variables.css);
+
 
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
@@ -21,12 +21,11 @@
 }
 
 .header__theme-menu {
-  margin-top: 15px;
+  margin-top: 20px;
   justify-self: center;
   display: grid;
   grid-template-columns: 1fr 0.6fr 1fr;
   grid-template-areas: ". buttons decoration";
-  max-height: 30px;
   width: calc(100% - 20px);
 }
 
@@ -35,7 +34,7 @@
   list-style: none;
   grid-area: buttons;
   max-width: 230px;
-  align-self: end;
+  align-self: start;
   padding: 0;
   justify-content: space-between;
 }
@@ -74,16 +73,13 @@
 }
 
 .header__symbol {
-  margin-top: 5px;
   grid-area: decoration;
   justify-self: end;
-  align-self: center;
   font-family: var(--font-main);
   font-weight: var(--font-normal);
   font-size: 18px;
   color: var(--color-accent);
   display: var(--corner-symbol-display);
-  align-items: center;
   gap: 10px;
   padding-right: 5%;
 }
@@ -94,6 +90,7 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
+  margin-top: 8px;
   box-shadow: 0px 0px 4px 2px #ff0070;
 }
 
@@ -111,9 +108,9 @@
 .header__subtext {
   margin-top: 5.1%;
   margin-right: 2%;
-  height: 71px;
   width: 48%;
   justify-self: end;
+  height: min-content;
 }
 
 .header__subtext p {
@@ -124,9 +121,6 @@
   display: block;
 }
 
-.header__subtext span:last-of-type {
-  margin-bottom: 10px;
-}
 
 .corner {
   width: 25px;
@@ -313,7 +307,7 @@
 @media (max-width: 768px) {
   .header {
     width: 100%;
-    height: max(669px, 1024px);
+    min-height: 668px;
   }
 
   .header__title {
@@ -323,9 +317,8 @@
 
   .header__subtext {
     margin-top: 5.5%;
-    height: 117px;
     width: 47.5%;
-    margin-right: 2.5%;
+    margin-right: 20px;
   }
 
   .header__subtext span {
@@ -362,7 +355,7 @@
   }
 
   .content {
-    margin-top: 60px;
+    margin: 60px auto 0;
     width: 95%;
   }
 
@@ -421,13 +414,22 @@
   }
 }
 
-@media (max-width: 375px) {
-  .page {
-    margin: 0;
+@media (max-width: 580px) {
+
+  .why {
+    display: flex;
+    flex-direction: column;
   }
 
+  .how {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    
+  }
+  
   .header {
-    height: 668px;
     grid-template-rows: 1fr 0.5fr 1fr;
   }
 
@@ -469,6 +471,14 @@
     left: 10px;
   }
 
+}
+
+@media (max-width: 375px) {
+  .page {
+    margin: 0;
+  }
+
+
   .content {
     margin: 30px auto 0;
   }
@@ -477,10 +487,7 @@
     margin-top: 40px;
   }
 
-  .why {
-    display: flex;
-    flex-direction: column;
-  }
+
 
   .why .article-title {
     max-width: 100%;
@@ -490,11 +497,7 @@
     width: 80%;
   }
 
-  .how {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
+
 
   .pics__container {
     margin-top: 0;
